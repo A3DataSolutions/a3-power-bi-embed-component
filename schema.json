@@ -1,0 +1,37 @@
+{
+  "type": "component",
+  "metadata": {},
+  "schema": {
+    "name": "a3-power-bi-embedder",
+    "friendlyName": "a3-power-bi-embedder",
+    "description": "A component which allows you to embed PowerBI for customers.",
+    "icon": "Text",
+    "styles": ["size"],
+    "settings": [
+      {
+        "type": "text",
+        "required": true,
+        "key": "accessToken",
+        "label": "Access Token"
+      },
+      {
+        "type": "text",
+        "key": "workspaceId",
+        "label": "Workspace ID"
+      },
+      {
+        "type": "text",
+        "required": true,
+        "key": "reportId",
+        "label": "Report ID"
+      },
+      {
+        "type": "select",
+        "required": true,
+        "options": ["Paginated","Regular"],
+        "key": "reportType",
+        "label": "Report Type"
+      }
+    ]
+  }
+}
