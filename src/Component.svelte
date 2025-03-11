@@ -7,6 +7,7 @@
   export let accessToken;
   export let reportType;
   export let reportId;
+  export let embedUrl;
 
   $: abbrReportType = (reportType == 'Paginated') ? 'rdlEmbed' : 'reportEmbed'
 
@@ -36,7 +37,7 @@
       type: "report",
       tokenType: pbi.models.TokenType.Embed,
       accessToken: accessToken,
-      embedUrl: "https://app.powerbi.com/"+abbrReportType,
+      embedUrl: embedUrl ?? ("https://app.powerbi.com/"+abbrReportType),
       id: reportId,
       // permissions: pbi.models.Permissions.Read,
     };

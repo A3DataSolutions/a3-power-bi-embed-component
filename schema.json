@@ -26,6 +26,12 @@
         "label": "Report ID"
       },
       {
+        "type": "text",
+        "required": true,
+        "key": "embedUrl",
+        "label": "Embed URL"
+      },
+      {
         "type": "select",
         "required": true,
         "options": ["Paginated","Regular"],
