@@ -27,7 +27,7 @@
       },
       {
         "type": "text",
-        "required": true,
+        "required": false,
         "key": "embedUrl",
         "label": "Embed URL"
       },
