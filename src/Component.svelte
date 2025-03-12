@@ -17,16 +17,18 @@
 
   
   import * as pbi from "powerbi-client";
+  
 
   let powerbi = new pbi.service.Service(
     pbi.factories.hpmFactory,
     pbi.factories.wpmpFactory,
     pbi.factories.routerFactory,
   );
+
+
   $: (async () => {
     if (accessToken.length > 30) {
     await tick();
-    const reportContainer = document.getElementById("reportContainer");
     try {
       powerbi.reset(reportContainer)
     }
@@ -42,6 +44,10 @@
       // permissions: pbi.models.Permissions.Read,
     };
     console.log('Writing report');
+    console.log('getting reporting container'+"reportContainer"+($component.id))
+    const reportContainer = document.getElementById("reportContainer"+($component.id));
+    console.log('Finding report container')
+    console.log(reportContainer)
     let report = powerbi.embed(reportContainer, config);
   }
   else {
@@ -52,5 +58,5 @@
 </script>
 
 <div use:styleable={$component.styles}>
-    <div id="reportContainer"></div>
+    <div id="reportContainer{$component.id}"></div>
 </div>
