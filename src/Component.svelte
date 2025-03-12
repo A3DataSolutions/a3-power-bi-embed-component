@@ -29,6 +29,11 @@
   $: (async () => {
     if (accessToken.length > 30) {
     await tick();
+    console.log('Writing report');
+    console.log('getting reporting container'+"reportContainer"+($component.id))
+    const reportContainer = document.getElementById("reportContainer"+($component.id));
+    console.log('Finding report container')
+    console.log(reportContainer)
     try {
       powerbi.reset(reportContainer)
     }
@@ -43,11 +48,6 @@
       id: reportId,
       // permissions: pbi.models.Permissions.Read,
     };
-    console.log('Writing report');
-    console.log('getting reporting container'+"reportContainer"+($component.id))
-    const reportContainer = document.getElementById("reportContainer"+($component.id));
-    console.log('Finding report container')
-    console.log(reportContainer)
     let report = powerbi.embed(reportContainer, config);
   }
   else {
