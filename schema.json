@@ -21,7 +21,7 @@
       },
       {
         "type": "text",
-        "required": true,
+        "required": false,
         "key": "reportId",
         "label": "Report ID"
       },
